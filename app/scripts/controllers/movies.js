@@ -9,7 +9,7 @@ angular.module('myApp')
     // Movies data.
     self.data = moviesData;
 
-    // Bookmarks service object.
+    // Bookmarks service 
     self.bookmarksService = Bookmarks;
 
   }]);
