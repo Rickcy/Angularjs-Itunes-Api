@@ -1,33 +1,27 @@
-// Generated on 2014-12-24 using generator-angular 0.10.0
+
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
 
-  // Load grunt tasks automatically
+  
   require('load-grunt-tasks')(grunt);
 
-  // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  // Configurable paths for the application
+  
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
 
-  // Define the configuration for all the tasks
+ 
   grunt.initConfig({
 
-    // Project settings
+    
     yeoman: appConfig,
 
-    // Watches files for changes and runs tasks based on the changed files
+   
     watch: {
       bower: {
         files: ['bower.json'],
@@ -63,11 +57,11 @@ module.exports = function (grunt) {
       }
     },
 
-    // The actual grunt server settings
+  
     connect: {
       options: {
         port: 9010,
-        // Change this to '0.0.0.0' to access the server from outside.
+        
         hostname: 'localhost',
         livereload: 35731
       },
@@ -110,7 +104,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Make sure code styles are up to par and there are no obvious mistakes
+   
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -130,7 +124,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Empties folders to start fresh
+    
     clean: {
       dist: {
         files: [{
@@ -145,7 +139,7 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
 
-    // Add vendor prefixed styles
+ 
     autoprefixer: {
       options: {
         browsers: ['last 1 version']
@@ -160,7 +154,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Automatically inject Bower components into the app
+   
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
@@ -172,7 +166,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Compiles Sass to CSS and generates necessary files if requested
+   
     compass: {
       options: {
         sassDir: '<%= yeoman.app %>/styles',
@@ -201,7 +195,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Renames files for browser caching purposes
+   
     filerev: {
       dist: {
         src: [
@@ -213,7 +207,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Environment configuration.
+   
     ngconstant: {
       options: {
         name: 'config'
@@ -239,7 +233,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Build - Deploy site to repository.
+   
     buildcontrol: {
       dist: {
         options: {
@@ -251,9 +245,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Reads HTML for usemin blocks to enable smart builds that automatically
-    // concat, minify and revision files. Creates configurations in memory so
-    // additional tasks can operate on them
+   
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
@@ -270,7 +262,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Performs rewrites based on filerev and the useminPrepare configuration
+   
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
@@ -279,10 +271,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
+   
     // cssmin: {
     //   dist: {
     //     files: {
@@ -345,8 +334,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // ng-annotate tries to make the code safe for minification automatically
-    // by using the Angular long form for dependency injection.
+   
     ngAnnotate: {
       dist: {
         files: [{
@@ -358,14 +346,14 @@ module.exports = function (grunt) {
       }
     },
 
-    // Replace Google CDN references
+    
     cdnify: {
       dist: {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
 
-    // Copies remaining files to places other tasks can use
+  
     copy: {
       dist: {
         files: [{
@@ -401,7 +389,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Run some tasks in parallel to speed up the build process
+   
     concurrent: {
       server: [
         'compass:server'
@@ -416,7 +404,7 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Test settings
+   
     karma: {
       unit: {
         configFile: 'test/karma.conf.js',
