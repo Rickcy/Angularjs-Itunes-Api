@@ -12,7 +12,7 @@ angular.module('myApp')
       })
       .success(function(data) {
           var moviesIds = [];
-          // Get the top 30 movies IDs.
+         
           angular.forEach(data.feed.entry, function(movie) {
             moviesIds.push(movie.id.attributes['im:id']);
           });
@@ -58,7 +58,7 @@ angular.module('myApp')
 
           deferred.resolve(movies.results);
         })
-      // Return promise object.
+    
       return deferred.promise;
     }
 
