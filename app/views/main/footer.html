@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="bottom col-xs-12" ng-hide="$state.is('main.movie.trailer')"></div>
+  <ul class="col-xs-12 footer-links">
+
+    <li>
+      <a href="https://github.com/Rickcy/Angularjs-Itunes-Api" target="_blank">
+        <span class="fa fa-github color-effect" aria-hidden="true"></span>Посмотреть код
+      </a>
+    </li>
+    <li>
+      <a  href="http://89.253.226.34/Portfolio" target="_blank">
+        <span class="fa fa-user color-effect" aria-hidden="true"></span> Evgeniy Kudenko
+      </a>
+    </li>
+    <li ng-if="$state.is('main.movies') || $state.is('main.bookmarks')">
+      <a id="scrollArea" href="#myApp" du-smooth-scroll du-scrollspy duration="3000">
+        <span class="fa fa-chevron-circle-up color-effect" aria-hidden="true"></span> Back to top
+      </a>
+    </li>
+    <li class="responsive-icon hidden-xs hidden-is pull-right">
+      <span class="icon">Responsive design</span>
+    </li>
+  </ul>
+</div>
