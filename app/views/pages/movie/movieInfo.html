@@ -1,10 +1,10 @@
 <div class="row full">
-  <!--Navigation movies links-->
+  
   <div ng-include="'views/includes/movie-navigation.html'" class="col-xs-12 movie-links"></div>
-  <!-- Image -->
+ 
   <div class="col-xs-12 col-sm-7 col-sm-push-5 col-lg-5 col-lg-push-7 image-container">
     <div class="image-wrapper">
-      <!-- Mobile title -->
+      <
       <div class="background">
         <h3 class="text-center visible-xs">{{ movie.selectedMovie.trackName }}</h3>
         <img ng-src="{{ movie.selectedMovie.artworkUrl600 }}" alt="{{ movie.selectedMovie.trackName }}-poster image"/>
@@ -15,38 +15,38 @@
       </div>
     </div>
   </div>
-  <!-- Info -->
+ 
   <div class="col-xs-12 col-sm-5 col-sm-pull-7 col-lg-7 col-lg-pull-5 info-container">
    <div class="info-wrapper">
-     <!-- Title -->
+    
      <h3 class="text-center hidden-xs">{{ movie.selectedMovie.trackName }}</h3>
      <div scroll-bar class="description">{{ movie.selectedMovie.longDescription }}</div>
      <div class="gradient-wrapper">
-      <!-- Details -->
+     
       <ul class="details">
-       <!-- Release date -->
+     
        <li>
          <label><i class="fa fa-calendar"></i> Дата выхода</label>
          <div class="data">{{ movie.selectedMovie.releaseDate | date:'longDate' }}</div>
        </li>
-       <!-- Genre -->
+      
        <li>
          <label><i class="fa fa-tag"></i> Жанр</label>
          <div class="data">{{ movie.selectedMovie.primaryGenreName }}</div>
        </li>
-       <!-- Director -->
+      
        <li>
          <label><i class="fa fa-user"></i> Режиссер</label>
          <div class="data">{{ movie.selectedMovie.artistName }}</div>
        </li>
-       <!-- Prices -->
+      
        <li>
          <label><i class="fa fa-money"></i> Цена</label>
          <span ng-show="movie.selectedMovie.collectionHdPrice" ><span>HD:</span> {{ movie.selectedMovie.collectionHdPrice }}$</span>
          <span ng-show="movie.selectedMovie.trackHdRentalPrice"> | </span>
          <span ng-show="movie.selectedMovie.trackHdRentalPrice"><span>Rental HD:</span> {{ movie.selectedMovie.trackHdRentalPrice }}$</span>
        </li>
-       <!-- Rated -->
+      
        <li>
          <label><i class="fa fa-video-camera"></i> Рейтинг:</label>
          <div class="data">{{ movie.selectedMovie.contentAdvisoryRating }}</div>
@@ -67,7 +67,7 @@
            </div>
          </li>
       </ul>
-      <!-- Trailer link -->
+     
       <div class="text-center trailer">
         <div class="color-effect link" ng-click="$state.go('main.movie.trailer', {'name': movie.selectedMovie.urlAlias, 'originBookmark': movie.selectedMovie.originBookmark})">
          <label class="color-effect">Посмотреть трейлер</label>
