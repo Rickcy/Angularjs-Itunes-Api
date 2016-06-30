@@ -15,11 +15,11 @@ angular.module('myApp')
 
         var deferred = $q.defer();
 
-        // Create a deep
+    
         var movieCopy = {};
         angular.copy(movie, movieCopy);
 
-        // Get array of movies.
+      
         var movies = data;
 
         movieCopy.originBookmark = 1;
