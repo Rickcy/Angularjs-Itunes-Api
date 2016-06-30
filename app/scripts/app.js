@@ -18,8 +18,7 @@ angular
 
     var redirect = function($state, selectedMovie) {
       if (!angular.isDefined(selectedMovie)) {
-        // if the movie doesn't exist then redirect to the "parent" state.
-        // in our case it's the main "movies" state.
+       
         $state.go('main.movies');
       }
     };
@@ -34,7 +33,7 @@ angular
     $urlRouterProvider.otherwise('/movies');
 
     $stateProvider
-      // The main view.
+     
       .state('main',{
         url: '/',
         abstract: true,
@@ -50,7 +49,7 @@ angular
         }
        })
 
-      // Movies state.
+     
       .state('main.movies',{
         url: 'movies',
         views: {
@@ -103,7 +102,6 @@ angular
         }
        })
 
-      // Movies state.
       .state('main.movie',{
         url: 'movie/{name}?originBookmark',
         abstract: true,
@@ -128,7 +126,7 @@ angular
         }
       })
 
-      // Single movie state.
+    
       .state('main.movie.movieInfo',{
 
         url: '^/movie/info/{name}?originBookmark',
@@ -149,7 +147,7 @@ angular
         }
       })
 
-      // Single movie state.
+     
       .state('main.movie.trailer',{
 
         url: '^/movie/trailer/{name}?originBookmark',
@@ -176,11 +174,11 @@ angular
     $rootScope.$stateParams = $stateParams;
     $rootScope.parseInt = parseInt;
 
-    // Helper to debug on template file.
+   
     $rootScope.console = function(data) {
       return console.log(data);
     };
 
-    // Access local storage service from any scope.
+  
     $rootScope.localStorageService = localStorageService;
   }])
