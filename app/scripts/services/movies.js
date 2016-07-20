@@ -62,7 +62,7 @@ angular.module('myApp')
       return deferred.promise;
     }
 
-    // Public API here
+  
     return {
 
       gettingMovies: function(moviesCount) {
