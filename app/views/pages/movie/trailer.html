@@ -1,0 +1,10 @@
+<div class="row trailer">
+ 
+  <div ng-include="'views/includes/movie-navigation.html'" class="col-xs-12 movie-links"></div>
+ 
+   <h3 class="col-xs-12 text-center">{{ movie.selectedMovie.trackName }} - Трейлер</h3>
+ 
+  <div class="col-xs-12 movie-trailer">
+    <iframe type="text/html" ng-src="{{ movie.movieTrailerUrl }}" frameborder="0" allowfullscreen/>
+  </div>
+</div>

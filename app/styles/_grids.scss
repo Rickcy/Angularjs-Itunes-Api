@@ -1,0 +1,31 @@
+
+$screen-sm-min: ($screen-is-max + 1);
+
+.container {
+  @media (min-width: $screen-is-min) and (max-width: $screen-is-max) {
+    width: $ContainerPhone;
+  }
+}
+
+
+@media (min-width: $screen-is-min) and (max-width: $screen-is-max) {
+  @include make-grid(is);
+}
+
+
+@media (min-width: $screen-is-min) and (max-width: $screen-is-max) {
+  @include responsive-visibility('.visible-is');
+}
+
+
+@media (min-width: $screen-is-min) and (max-width: $screen-is-max) {
+  @include responsive-invisibility('.hidden-is');
+}
+
+@media (min-width: $screen-sm-min) {
+  @include responsive-invisibility('.visible-is');
+}
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-invisibility('.visible-is');
+}

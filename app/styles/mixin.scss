@@ -1,0 +1,162 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "compass/css3/opacity";
+@import "compass/css3/transform";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+
+
+$grid-gutter-width: 0px;
+
+
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+
+$ContainerPhone: 460px;
+
+
+$screen-is: 480px;
+
+$screen-is-min: ($screen-is);
+
+
+$screen-is-max: 767px;
+
+
+$screen-xs-max: ($screen-is-min - 1);
+
+
+/** 
+$grid-float-breakpoint: $screen-is-min;
+
+
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
+
+
+
+@import "_grids.scss";
+
+
+$gray: #777777;
+$darkGray: #1e1e1e;
+$lightGray: rgba(255, 255, 255, 0.5);
+$transparentGray: rgba(255, 255, 255, 0.61);
+$blue: rgb(51, 122, 183);
+$green: #72aa25;
+$red: rgb(179, 41, 41);
+
+
+$effect: ease-in;
+
+
+
+
+@mixin color-change-effect {
+  @include transition-property(color, border);
+  @include transition-duration(0.3s);
+  @include transition-timing-function($effect);
+}
+
+@mixin border($height) {
+  background: $blue;
+  height: $height;
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(41, 137, 216, 0.51) 50%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(41, 137, 216, 0.51)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(41, 137, 216, 0.51) 50%,rgba(0,0,0,0) 100%); 
+  background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(41, 137, 216, 0.51) 50%,rgba(0,0,0,0) 100%); 
+  background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(41, 137, 216, 0.51) 50%,rgba(0,0,0,0) 100%); 
+  background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(41, 137, 216, 0.51) 50%,rgba(0,0,0,0) 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 );
+}
+
+@mixin borders($height) {
+  position: relative;
+
+  &:after,
+  &:before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    @include border($height);
+  }
+
+  &::before {
+    bottom: 0px;
+  }
+
+  &:after {
+    top: 0px;
+  }
+}
+
+
+@mixin large-desktop-only {
+  @media (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+
+@mixin medium-desktop-only {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+// Medium to large desktop.
+@mixin medium-to-large-desktop-only {
+  @media (min-width: $screen-md-min)  {
+    @content;
+  }
+}
+
+
+@mixin tablet-only {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin tablet-to-desktop-only {
+  @media (min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+
+@mixin mobile-only {
+  @media (min-width: $screen-is-min) and (max-width: $screen-is-max) {
+    @content;
+  }
+}
+
+// Not for mobile width only.
+@mixin exclude-mobile-only {
+  @media (min-width: $screen-is-min)  {
+    @content;
+  }
+}
+
+
+@mixin phone-only {
+  @media (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+// Not for phone width only.
+@mixin exclude-phone-only {
+  @media (min-width: $screen-xs-max)  {
+    @content;
+  }
+}
+
+// Not for phone to mobile width only.
+@mixin phone-to-mobile-only {
+  @media (max-width: $screen-is-max)  {
+    @content;
+  }
+}
+
